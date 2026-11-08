@@ -137,7 +137,8 @@ Este arquivo registra o contexto, as decisões técnicas e o estado atual do des
 ## 🎯 Próximos Passos & Pendências
 *Lista dinâmica do que precisa ser feito a seguir. Atualize conforme avançamos.*
 
-- [ ] **[Segurança, 2026-11-08] Pós-limpeza:** `SEED_ADMIN_PASSWORD` deve estar definida no Railway (rotaciona a senha do admin no boot); commits antigos podem continuar acessíveis por SHA no GitHub após force-push.
+- [x] **[Segurança, 2026-11-08] Senha do admin em produção rotacionada** (hash atualizado direto no banco + `SEED_ADMIN_PASSWORD` definida no serviço backend do Railway com o mesmo valor; senha em `CLAUDE.local.md`).
+- [ ] **[Segurança, 2026-11-08] Pós-limpeza:** commits antigos podem continuar acessíveis por SHA no GitHub após force-push.
 
 - [ ] **[Dívida técnica — testes] Suítes já quebradas na `main` (backend e frontend), independentes da feature de compra parcelada.**
   - Backend: com `financeai_test` recém-criado, 19 testes falham no pacote `handlers` — grupos `TestDashboardHandler_*`, `TestFlow_*`, `TestMarkPaid_*`, `TestPayInvoice_*` (ex.: `TestPayInvoice_Overpayment` — "adjustment category: got 'pagamento_fatura', want 'outros'"). Provável poluição de estado no DB de teste compartilhado + divergência entre código e expectativa do teste de categoria de ajuste de fatura.
