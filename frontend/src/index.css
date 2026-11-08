@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] { -moz-appearance: textfield; }
+
+@layer base {
+  :root {
+    --app-height: 100svh;
+    --sab: env(safe-area-inset-bottom, 0px);
+    --background: 210 20% 98%;
+    --foreground: 215 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 10%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 210 40% 6%;
+
+    --secondary: 210 18% 93%;
+    --secondary-foreground: 215 25% 10%;
+
+    --muted: 210 18% 93%;
+    --muted-foreground: 215 12% 50%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 210 40% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 210 20% 96%;
+    --sidebar-foreground: 215 25% 20%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 210 40% 6%;
+    --sidebar-accent: 210 18% 90%;
+    --sidebar-accent-foreground: 215 25% 10%;
+    --sidebar-border: 214 20% 88%;
+    --sidebar-ring: 160 84% 39%;
+  }
+
+  .dark {
+    --background: 220 20% 7%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 160 84% 45%;
+    --primary-foreground: 220 20% 5%;
+
+    --secondary: 220 14% 16%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 220 14% 16%;
+    --muted-foreground: 215 12% 55%;
+
+    --accent: 160 84% 45%;
+    --accent-foreground: 220 20% 5%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 160 84% 45%;
+
+    --sidebar-background: 220 18% 9%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 160 84% 45%;
+    --sidebar-primary-foreground: 220 20% 5%;
+    --sidebar-accent: 220 14% 14%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 160 84% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    height: 100%;
+    height: 100svh;
+  }
+
+  body, #root {
+    height: 100%;
+    @apply bg-background text-foreground font-body antialiased;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .recharts-wrapper text {
+    font-family: "Manrope", system-ui, sans-serif !important;
+  }
+}
+
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}

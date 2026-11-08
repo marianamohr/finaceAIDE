@@ -1,0 +1,21 @@
+# Segredos e configuração local
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+CLAUDE.local.md
+
+# Dados financeiros/pessoais reais — nunca versionar
+auditoria-*.md
+
+# Build e artefatos
+backend/server
+backend/uploads/
+**/coverage*.out
+**/node_modules/
+**/dist/
+
+# Sistema
+.DS_Store
